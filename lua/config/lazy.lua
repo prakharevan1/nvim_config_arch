@@ -28,4 +28,5 @@ require("config.vim-opts")
 require("lazy").setup({
     {import = "plugins.appearance"},
     {import = "plugins.features"},
+    {import = "plugins.code_formatting"}
 })
