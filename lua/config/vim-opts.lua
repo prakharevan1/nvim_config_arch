@@ -20,3 +20,7 @@ vim.g.clipboard = {
 	},
 	cache_enabled = true,
 }
+
+-- Ensure Lua 5.4 paths are prioritized
+package.path = package.path .. ";/usr/local/share/lua/5.4/?.lua"
+package.cpath = package.cpath .. ";/usr/local/lib/lua/5.4/?.so"

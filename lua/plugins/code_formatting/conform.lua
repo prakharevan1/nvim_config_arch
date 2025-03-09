@@ -7,6 +7,7 @@ return {
 			formatters_by_ft = {
 				rust = { "rustfmt" },
 				lua = { "stylua" },
+				java = { "clang_format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
