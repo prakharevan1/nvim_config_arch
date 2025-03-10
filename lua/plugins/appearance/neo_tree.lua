@@ -18,6 +18,8 @@ return {
 					},
 				},
 			})
+			local events = require("neo-tree.events")
+			events.fire_event(events.GIT_EVENT)
 			vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 		end,
 	},
