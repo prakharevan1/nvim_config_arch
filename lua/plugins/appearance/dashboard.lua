@@ -26,7 +26,7 @@ return {
 			" `''                                                                      ``'",
 		}
 
-		vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#de022a" }) -- Set custom header color
+		vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#7311cf" }) -- Set custom header color
 		dashboard.section.header.opts.hl = "DashboardHeader"
 
 		dashboard.section.buttons.val = {

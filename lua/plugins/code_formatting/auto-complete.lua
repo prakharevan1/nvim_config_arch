@@ -14,6 +14,7 @@ return {
 		},
 	},
 	{
+
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/vim-vsnip-integ",
@@ -22,6 +23,17 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			require("luasnip.loaders.from_vscode").lazy_load()
+			-- add cmd line auto completion
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+					},
+				}),
+			})
 
 			cmp.setup({
 				snippet = {
@@ -47,28 +59,6 @@ return {
 				}, {
 					{ name = "buffer" },
 				}),
-			})
-
-			-- add cmd line auto completion
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{
-						name = "cmdline",
-						option = {
-							ignore_cmds = { "Man", "!" },
-						},
-					},
-				}),
-			})
-
-			-- add buffer support for cmd line
-			require("cmp").setup({
-				sources = {
-					{ name = "buffer" },
-				},
 			})
 		end,
 	},
