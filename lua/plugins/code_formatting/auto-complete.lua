@@ -1,6 +1,10 @@
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
+		dependencies = {
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-buffer",
+		},
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -43,6 +47,28 @@ return {
 				}, {
 					{ name = "buffer" },
 				}),
+			})
+
+			-- add cmd line auto completion
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" },
+						},
+					},
+				}),
+			})
+
+			-- add buffer support for cmd line
+			require("cmp").setup({
+				sources = {
+					{ name = "buffer" },
+				},
 			})
 		end,
 	},

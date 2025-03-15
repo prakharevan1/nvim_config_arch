@@ -1,44 +1,40 @@
 return {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-        -- add any options here
-    },
-    dependencies = {
-        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-        "MunifTanjim/nui.nvim",
-        -- OPTIONAL:
-        --   `nvim-notify` is only needed, if you want to use the notification view.
-        --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
-    },
-    config = function()
-        require("noice").setup({
-            views = {
-                popup = {
-                    size = { width = 80, height = 20 },
-                    border = "rounded",
-                },
-            },
-            routes = {
-                -- Small outputs stay in messages
-                {
-                    filter = {
-                        event = "msg_show",
-                        any = {
-                            { find = "!cargo clean" },
-                        },
-                    },
-                    view = "notify",
-                },
-                -- All other outputs go to the popup
-                {
-                    filter = {
-                        event = "msg_show",
-                    },
-                    view = "popup",
-                },
-            },
-        })
-    end
+	"folke/noice.nvim",
+	config = function()
+		require("noice").setup({
+			-- Disable notifications, messages, etc.
+			lsp = {
+				progress = { enabled = false }, -- Disable LSP progress notifications
+				signature = { enabled = false }, -- Disable LSP signature help
+				hover = { enabled = false }, -- Disable LSP hover docs
+			},
+			messages = {
+				enabled = false, -- Disable all messages
+			},
+			popupmenu = {
+				enabled = false, -- Disable popup menu
+			},
+			cmdline = {
+				enabled = true, -- Enable the command line UI
+				format = {
+					search_down = { icon = "🔍", kind = "search" }, -- Customize search UI format
+					search_up = { icon = "🔍", kind = "search" },
+					help = { icon = "⚙️", kind = "help" },
+				},
+			},
+			-- Further customization for command-line UI:
+			cmdline_popup = {
+				enabled = true, -- Enable cmdline popup
+				format = {
+					-- Customize command line formatting
+					search_down = { icon = "🔍", kind = "search" },
+					search_up = { icon = "🔍", kind = "search" },
+				},
+			},
+			-- Disable other non-UI features
+			notify = {
+				enabled = false, -- Disable notifications (you can also selectively enable them if needed)
+			},
+		})
+	end,
 }

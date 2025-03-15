@@ -57,18 +57,34 @@ return {
 		-- Get the current date and time
 		local date_time = os.date("%A, %B %d, %Y - %I:%M:%S %p") -- e.g. "Saturday, March 08, 2025 - 03:45:12 PM"
 
-		-- Helper function to center a string within a given width
+		-- Function to get the max string width
+		local function get_max_width(...)
+			local max_width = 0
+			for _, str in ipairs({ ... }) do
+				local str_width = vim.fn.strdisplaywidth(str)
+				if str_width > max_width then
+					max_width = str_width
+				end
+			end
+			return max_width
+		end
+
+		-- Function to center a string
 		local function center_string(str, width)
-			local spaces = width - #str
-			local left_padding = math.floor(spaces / 2)
-			local right_padding = spaces - left_padding
+			local str_width = vim.fn.strdisplaywidth(str)
+			if str_width >= width then
+				return str
+			end
+			local total_padding = width - str_width
+			local left_padding = math.floor(total_padding / 2)
+			local right_padding = total_padding - left_padding
 			return string.rep(" ", left_padding) .. str .. string.rep(" ", right_padding)
 		end
 
 		-- Set the random quote and the date/time in the footer, centered
-		local width = 80 -- The width of the footer
-		local centered_quote = center_string(random_quote, width)
-		local centered_date_time = center_string(date_time, width)
+		local max_width = get_max_width(random_quote, date_time)
+		local centered_quote = center_string(random_quote, max_width)
+		local centered_date_time = center_string(date_time, max_width)
 
 		-- Set the final footer
 		dashboard.section.footer.val = centered_quote .. "\n" .. centered_date_time
