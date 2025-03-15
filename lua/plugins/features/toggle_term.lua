@@ -6,7 +6,6 @@ return {
 			require("toggleterm").setup({
 				size = 15, -- Terminal height (horizontal) or width (vertical)
 				hide_numbers = true, -- Hide line numbers in the terminal
-				open_mapping = [[<leader>tt]], -- Toggle with <leader>tt
 				shade_filetypes = {}, -- No shading for specific filetypes
 				shade_terminals = true, -- Apply shading to terminals
 				shading_factor = 2, -- Darken terminal by this factor
