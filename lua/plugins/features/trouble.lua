@@ -5,8 +5,8 @@ return {
 	keys = {
 		{
 			"<leader>xx",
-			"<cmd>Trouble diagnostics toggle<cr>",
-			desc = "Diagnostics (Trouble)",
+			"<cmd>Trouble diagnostics toggle focus=true<cr>",
+			desc = "Diagnostics focus(Trouble)",
 		},
 		{
 			"<leader>xQ",
@@ -23,7 +23,7 @@ return {
 		{
 			"<leader>xX",
 			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-			desc = "Buffer Diagnostics (Trouble)",
+			desc = "Buffer Diagnostics non-focused (Trouble)",
 		},
 		{
 			"<leader>cl",
