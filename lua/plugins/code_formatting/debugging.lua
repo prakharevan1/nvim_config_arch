@@ -8,44 +8,23 @@ return {
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
-			dapui.setup()
+			-- Configure dapui layout and controls to prevent nil element errors
 
-			dap.listeners.before.attach.dapui_config = function()
-				dapui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				dapui.close()
-			end
-			vim.keymap.set("n", "<Leader>db", function()
-				require("dap").toggle_breakpoint()
-			end, { desc = "Toggle breakpoints with the debugger" })
-			vim.keymap.set("n", "<Leader>dc", function()
-				require("dap").continue()
-			end, { desc = "Continue with the neovim debugger" })
+			-- rust dap
+			dap.adapters.codelldb = {
+				type = "executable",
+				command = "codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
 
-			local home_dir = vim.fn.expand("~")
-			local lldb_path = home_dir .. "/.local/share/nvim/mason/packages/codelldb/extension/lldb/bin/lldb"
-			dap.adapters.lldb = {
-				type = "server",
-				port = 13000,
-				executable = {
-					command = lldb_path,
-					args = { "--port", "13000" },
-				},
+				-- On windows you may have to uncomment this:
+				-- detached = false,
 			}
 			dap.configurations.rust = {
 				{
-					name = "Launch Rust Program",
-					type = "lldb",
+					name = "Launch rust program",
+					type = "codelldb",
 					request = "launch",
 					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file") -- Adjust to your build path
 					end,
 					cwd = "${workspaceFolder}",
 					stopOnEntry = false,
