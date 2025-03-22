@@ -17,10 +17,15 @@ return {
 				dapui.open()
 			end
 			dap.listeners.before.event_terminated.dapui_config = function()
-				dapui.close()
+				if not dap.session() then
+					dapui.close()
+				end
 			end
+
 			dap.listeners.before.event_exited.dapui_config = function()
-				dapui.close()
+				if not dap.session() then
+					dapui.close()
+				end
 			end
 			-- rust dap
 			dap.adapters.codelldb = {
