@@ -29,4 +29,8 @@ require("lazy").setup({
 	{ import = "plugins.features" },
 	{ import = "plugins.code_formatting" },
 })
-require("config.transparency")
+require("config.colorscheme_overrides")
+-- get line numbers
+require("config.line_nums")
+-- spellcheck
+require("config.spellcheck")

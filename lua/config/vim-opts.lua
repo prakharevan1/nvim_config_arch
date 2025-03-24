@@ -27,3 +27,14 @@ vim.g.clipboard = {
 -- Ensure Lua 5.4 paths are prioritized
 package.path = package.path .. ";/usr/local/share/lua/5.4/?.lua"
 package.cpath = package.cpath .. ";/usr/local/lib/lua/5.4/?.so"
+-- todo command
+vim.api.nvim_create_user_command("OpenTodo", function()
+	vim.cmd.vsplit()
+	vim.cmd("wincmd L")
+	vim.api.nvim_win_set_width(0, 45)
+	vim.cmd("edit /home/evandagur/Documents/programming/todo.md")
+	vim.cmd("wincmd h")
+end, {})
+
+-- keybind to open this
+vim.keymap.set("n", "<leader>td", ":OpenTodo<CR>", { noremap = true, silent = true })
