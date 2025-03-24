@@ -12,7 +12,7 @@ return {
 				{ noremap = true, silent = true },
 				{ desc = "Run rust code with cargo (debug)" }
 			)
-
+			-- test commit
 			-- Cargo run --release
 			vim.keymap.set(
 				"n",
