@@ -10,4 +10,10 @@ return {
 		"echasnovski/mini.pick", -- optional
 	},
 	config = true,
+	vim.keymap.set(
+		"n",
+		"<leader>gs",
+		"<cmd>:Neogit cwd=%:p:h<CR>",
+		{ desc = "Get the git status of the current github repository." }
+	),
 }

@@ -27,5 +27,11 @@ return {
 			{ "zz", desc = "Center Align" },
 			{ "zb", desc = "Bottom Align" },
 		}, { mode = "n" })
+		vim.keymap.set(
+			"n",
+			"<leader>mm",
+			"<cmd>:WhichKey<CR>",
+			{ desc = "Display all your current keybindings with which-key." }
+		)
 	end,
 }
