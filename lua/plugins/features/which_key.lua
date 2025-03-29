@@ -1,10 +1,6 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-	},
 	keys = {
 		{
 			"<leader>?",
@@ -16,6 +12,9 @@ return {
 	},
 	config = function()
 		local wk = require("which-key")
+		local opts = {
+			preset = "helix",
+		}
 		wk.add({
 			{ "<C-u>", desc = "Scroll Up" },
 			{ "<C-d>", desc = "Scroll Down" },
@@ -33,5 +32,6 @@ return {
 			"<cmd>:WhichKey<CR>",
 			{ desc = "Display all your current keybindings with which-key." }
 		)
+		wk.setup(opts)
 	end,
 }
