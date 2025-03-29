@@ -22,7 +22,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- get vim options
-require("config.vim-opts")
+require("config.vim_opts")
 -- Setup lazy.nvim
 require("lazy").setup({
 	{ import = "plugins.appearance" },
