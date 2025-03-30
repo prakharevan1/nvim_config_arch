@@ -25,16 +25,10 @@ vim.g.maplocalleader = "\\"
 require("config.vim_opts")
 -- Setup lazy.nvim
 require("lazy").setup({
-	{ import = "plugins.appearance" },
-	{ import = "plugins.features" },
-	{ import = "plugins.code_formatting" },
+	{ import = "freerunning.appearance" },
+	{ import = "freerunning.features" },
+	{ import = "freerunning.code_formatting" },
 })
-require("config.colorscheme_overrides")
--- get line numbers
-require("config.line_nums")
--- spellcheck
-require("config.spellcheck")
--- clipboard
-require("config.clipboard")
--- keybind overridings
-require("config.keybinding_overrides")
+
+-- extra stuff
+require("config.freerunning")
