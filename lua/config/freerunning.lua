@@ -1,10 +1,10 @@
 -- colorscheme override
-require("config.colorscheme_overrides")
+require("config.extras.colorscheme_overrides")
 -- get line numbers
-require("config.line_nums")
+require("config.extras.line_nums")
 -- spellcheck
-require("config.spellcheck")
+require("config.extras.spellcheck")
 -- clipboard
-require("config.clipboard")
+require("config.extras.clipboard")
 -- keybind overridings
-require("config.keybinding_overrides")
+require("config.extras.keybinding_overrides")
