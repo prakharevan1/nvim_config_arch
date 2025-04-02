@@ -60,7 +60,7 @@ return {
 
 			vim.keymap.set(
 				"n",
-				"<leader>dcb",
+				"<leader>ddb",
 				":DapClearBreakpoints<CR>",
 				{ desc = "Clear all the debugging breakpoints." }
 			)
