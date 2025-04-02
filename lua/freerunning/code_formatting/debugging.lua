@@ -66,6 +66,8 @@ return {
 			)
 
 			vim.keymap.set("n", "<leader>dso", ":DapStepOver<CR>", { desc = "Step over with the debugger." })
+			vim.keymap.set("n", "<leader>dsi", ":DapStepInto<CR>", { desc = "Step into with the debugger." })
+			vim.keymap.set("n", "<leader>dsO", ":DapStepOut<CR>", { desc = "Step out with the debugger." })
 		end,
 	},
 }
