@@ -47,6 +47,25 @@ return {
 					stopOnEntry = false,
 				},
 			}
+			vim.keymap.set(
+				"n",
+				"<leader>dc",
+				":lcd %:p:h:h | DapContinue<CR>",
+				{ desc = "Start debugging with a DAP." }
+			)
+
+			vim.keymap.set("n", "<leader>dt", ":DapTerminate<CR>", { desc = "Terminate the debugging DAP (exit)." })
+
+			vim.keymap.set("n", "<leader>db", ":DapToggleBreakpoint<CR>", { desc = "Toggle a debugging breakpoint." })
+
+			vim.keymap.set(
+				"n",
+				"<leader>dcb",
+				":DapClearBreakpoints<CR>",
+				{ desc = "Clear all the debugging breakpoints." }
+			)
+
+			vim.keymap.set("n", "<leader>dso", ":DapStepOver<CR>", { desc = "Step over with the debugger." })
 		end,
 	},
 }
