@@ -21,15 +21,15 @@ return {
 
 		vim.keymap.set(
 			"n",
-			"<leader>xt<CR>",
-			":Trouble todo",
+			"<leader>xt",
+			":Trouble todo<CR>",
 			{ desc = "View all the todo's in the file with trouble.nvim" }
 		)
 
 		vim.keymap.set(
 			"n",
-			"<leader>ft<CR>",
-			":TodoTelescope",
+			"<leader>ft",
+			":TodoTelescope<CR>",
 			{ desc = "Live grep through all the todo's with telescope." }
 		)
 	end,
