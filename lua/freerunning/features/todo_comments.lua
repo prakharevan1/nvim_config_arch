@@ -22,7 +22,7 @@ return {
 		vim.keymap.set(
 			"n",
 			"<leader>xt",
-			":Trouble todo<CR>",
+			":Trouble todo toggle<CR>",
 			{ desc = "View all the todo's in the file with trouble.nvim" }
 		)
 
