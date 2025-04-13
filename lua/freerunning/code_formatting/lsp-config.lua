@@ -18,6 +18,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
+			vim.diagnostic.config({
+				virtual_lines = true,
+				signs = true,
+				update_in_insert = false,
+				float = {
+					border = "rounded",
+					source = "if_many",
+				},
+			})
+
+			-- Use our handler instead
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local lspconfig = require("lspconfig")
