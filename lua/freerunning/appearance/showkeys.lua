@@ -1,8 +1,8 @@
 return {
-	"nvzone/showkeys",
+	"NStefan002/screenkey.nvim",
+	lazy = false,
+	version = "*", -- or branch = "main", to use the latest commit
 	config = function()
-		vim.api.nvim_create_user_command("ShowkeysToggle", function()
-			require("showkeys").toggle()
-		end, { desc = "Toggle showkeys" })
+		require("screenkey").setup({})
 	end,
 }

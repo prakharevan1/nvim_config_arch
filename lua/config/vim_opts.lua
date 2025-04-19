@@ -44,12 +44,12 @@ end, {})
 
 -- keybind to open this
 vim.keymap.set("n", "<leader>td", ":OpenTodo<CR>", { noremap = true, silent = true })
--- automatically run showkeys
-vim.api.nvim_create_autocmd("VimEnter", {
-	once = true,
-	callback = function()
-		vim.cmd("ShowkeysToggle")
-	end,
-})
 -- auto save command with CTRL S
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", {})
+
+-- automatically run screenkeys
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("Screenkey toggle")
+	end,
+})

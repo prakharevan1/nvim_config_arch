@@ -30,7 +30,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "render-markdown.nvim": { "branch": "main", "commit": "dfc1299d9f32b53b34b7ac6c3a7553b5fd29977f" },
   "rustaceanvim": { "branch": "master", "commit": "e9c5aaba16fead831379d5f44617547a90b913c7" },
-  "showkeys": { "branch": "main", "commit": "8daf5abb5fece0c9e1fa2c5679aaf226a80f5c38" },
+  "screenkey.nvim": { "branch": "main", "commit": "16390931d847b1d5d77098daccac4e55654ac9e2" },
   "smear-cursor.nvim": { "branch": "main", "commit": "cb67711016caad914e44b8d074ff1fb67845b4aa" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
@@ -38,5 +38,6 @@
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
-  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" }
+  "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
+  "yazi.nvim": { "branch": "main", "commit": "8418e7028f91feacffcf75236fd4e93a5a3fe911" }
 }
